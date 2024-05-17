@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Bulan Mei 2024 pada 08.03
+-- Waktu pembuatan: 17 Bulan Mei 2024 pada 10.02
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 8.0.8
 
@@ -51,6 +51,13 @@ CREATE TABLE `berita` (
   `gambar` varchar(100) DEFAULT NULL,
   `jenis` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `berita`
+--
+
+INSERT INTO `berita` (`id_berita`, `judul`, `tanggal`, `jam`, `isi`, `dilihat`, `gambar`, `jenis`) VALUES
+(3, 'POLI PENYAKIT DALAM', '17/05/2024', '2024-05-17 07:46:30', '<p>diagnosis, pengobatan, dan manajemen penyakit-penyakit dalam tubuh manusia, terutama yang mempengaruhi organ dalam seperti jantung, paru-paru, ginjal, hati, dan saluran pencernaan</p>\r\n', 0, '17052024023728.jpg', 'poli');
 
 -- --------------------------------------------------------
 
@@ -125,10 +132,19 @@ CREATE TABLE `daftar` (
 
 CREATE TABLE `galeri` (
   `id_galeri` int(4) NOT NULL,
-  `judul` varchar(25) NOT NULL,
-  `keterangan` varchar(200) NOT NULL,
-  `gambar` varchar(100) DEFAULT NULL
+  `judul` text NOT NULL,
+  `keterangan` text NOT NULL,
+  `gambar` varchar(100) DEFAULT NULL,
+  `jenis` varchar(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `galeri`
+--
+
+INSERT INTO `galeri` (`id_galeri`, `judul`, `keterangan`, `gambar`, `jenis`) VALUES
+(2, 'Obat Terbaik Adalah Tubuh Anda', 'konsep yang menekankan kemampuan alami tubuh manusia untuk menyembuhkan dan memperbaiki dirinya sendiri. ', '17052024013525.jpg', 'slide'),
+(3, 'Kesehatan , kekayaan yang sejati', 'Menjaga kesehatan bukan hanya soal hidup lebih lama, tetapi juga soal hidup lebih baik.', '17052024013621.jpg', 'slide');
 
 -- --------------------------------------------------------
 
@@ -179,7 +195,7 @@ CREATE TABLE `profil` (
 --
 
 INSERT INTO `profil` (`id_profil`, `nama_app`, `tahun`, `nama`, `alias`, `alamat`, `isi`, `gambar`, `akabest`) VALUES
-(1, 'RSU KARTINI', '(0729) 370028', 'RUMAH SAKIT UMUM KARTINI', 'rumahsakitkartini@yahoo.com', 'Jl. Kartini No.104, Kali Rejo, Kec. Kalirejo, Kabupaten Lampung Tengah, Lampung 34174', '<p>Puji syukur kami panjatkan ke hadirat Allah SWT, karena atas segala limpahan rahmat dan hidayah-Nya, kami dapat menyambut kehadiran sebuah inovasi baru di Pondok Pesantren Al-Hidayah Keputran Pringsewu, yaitu berdirinya website resmi pondok pesantren kami.</p>\r\n\r\n<p>Sebagai pengurus, kami sangat bangga dan berterima kasih atas dukungan serta partisipasi semua pihak yang telah turut berkontribusi dalam proses pembangunan dan peluncuran website ini. Website ini bukan hanya sekadar wadah informasi, tetapi juga merupakan langkah maju kami dalam memanfaatkan teknologi informasi untuk meningkatkan kualitas layanan pendidikan dan dakwah di lingkungan pondok pesantren.</p>\r\n\r\n<p>Melalui website ini, kami berharap dapat memberikan akses yang lebih luas bagi masyarakat, termasuk calon santri dan orang tua, untuk mendapatkan informasi tentang program-program pendidikan, kegiatan-kegiatan keagamaan, serta berbagai prestasi dan pencapaian yang telah diraih oleh pondok pesantren kami.</p>\r\n\r\n<p>Kami juga berkomitmen untuk terus mengembangkan dan memperbarui konten-konten yang ada dalam website ini, sehingga dapat selalu memberikan informasi yang akurat, relevan, dan bermanfaat bagi semua pihak yang mengunjungi website kami.</p>\r\n\r\n<p>Terima kasih kepada seluruh tim yang telah bekerja keras dalam pembangunan website ini, serta kepada semua pihak yang telah memberikan dukungan dan doa restu. Semoga website Pondok Pesantren Al-Hidayah Keputran Pringsewu ini dapat menjadi sarana yang bermanfaat dan memberikan manfaat yang besar bagi kita semua.</p>\r\n', '28042024084839.jpg', 'mardybest@gmail.com'),
+(1, 'RSU KARTINI', '(0729) 370028', 'RUMAH SAKIT UMUM KARTINI', 'rumahsakitkartini@yahoo.com', 'Jl. Kartini No.104, Kali Rejo, Kec. Kalirejo, Kabupaten Lampung Tengah, Lampung 34174', '<p>Rumah Sakit Kartini Lampung adalah salah satu fasilitas pelayanan kesehatan terkemuka di Provinsi Lampung, Indonesia. RS Kartini Lampung menyediakan layanan medis dan perawatan berkualitas tinggi dalam berbagai spesialisasi, termasuk layanan gawat darurat, bedah, kandungan, dan lainnya. Rumah sakit ini dikenal karena staf medisnya yang terampil dan terlatih serta fasilitas modern yang mendukung proses perawatan pasien. RS Kartini Lampung berkomitmen untuk memberikan pelayanan kesehatan yang holistik dan bermutu tinggi kepada masyarakat Lampung dan sekitarnya.</p>\r\n', '28042024084839.jpg', 'mardybest@gmail.com'),
 (2, 're', '', 'MARDIYANTO', '19081989578978975', '', '', '', '');
 
 -- --------------------------------------------------------
@@ -270,7 +286,7 @@ ALTER TABLE `alumni`
 -- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_berita` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `daftar`
@@ -282,7 +298,7 @@ ALTER TABLE `daftar`
 -- AUTO_INCREMENT untuk tabel `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id_galeri` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_galeri` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `kritik`

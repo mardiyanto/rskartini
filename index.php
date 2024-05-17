@@ -48,30 +48,22 @@ include "koneksi.php";
 
             <!-- Carousel Start -->
             <div class="header-carousel owl-carousel">
+               <?php   $tebaru=mysqli_query($koneksi," SELECT * FROM galeri WHERE jenis='slide'");
+    while ($t=mysqli_fetch_array($tebaru)){	?>
                 <div class="header-carousel-item">
-                    <img src="tema/img/carousel-1.jpg" class="img-fluid w-100" alt="Image">
+                    <img src="foto/galeri/<?php echo"$t[gambar]"; ?>" class="img-fluid w-100" alt="Image">
                     <div class="carousel-caption">
                         <div class="carousel-caption-content p-3">
-                            <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Physiotherapy Center</h5>
-                            <h1 class="display-1 text-capitalize text-white mb-4">Best Solution For Painful Life</h1>
-                            <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                            <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">SELAMTA DATANG DI WEBSITE RESMI <?php echo"$k_k[nama_app]";?></h5>
+                            <h1 class="display-1 text-capitalize text-white mb-4"><?php echo"$t[judul]"; ?></h1>
+                            <p class="mb-5 fs-5"><?php echo"$t[keterangan]"; ?>
                             </p>
                             <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Book Appointment</a>
                         </div>
                     </div>
                 </div>
-                <div class="header-carousel-item">
-                    <img src="tema/img/carousel-2.jpg" class="img-fluid w-100" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="carousel-caption-content p-3">
-                            <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Physiotherapy Center</h5>
-                            <h1 class="display-1 text-capitalize text-white mb-4">Best Solution For Painful Life</h1>
-                            <p class="mb-5 fs-5 animated slideInDown">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            </p>
-                            <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Book Appointment</a>
-                        </div>
-                    </div>
-                </div>
+    <?php } ?>
+               
             </div>
             <!-- Carousel End -->
         </div>
@@ -85,122 +77,27 @@ include "koneksi.php";
                     <div class="sub-style">
                         <h4 class="sub-title px-3 mb-0">What We Do</h4>
                     </div>
-                    <h1 class="display-3 mb-4">Our Service Given Physio Therapy By Expert.</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
+                    <h1 class="display-3 mb-4">POLI KLINIK KAMI</h1>
+                    <!-- <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p> -->
                 </div>
                 <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                <?php   $tebaru=mysqli_query($koneksi," SELECT * FROM berita WHERE jenis='poli'");
+    while ($t=mysqli_fetch_array($tebaru)){	?>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="service-item rounded">
                            <div class="service-img rounded-top">
-                                <img src="img/service-1.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <img src="foto/data/<?php echo"$t[gambar]"; ?>" class="img-fluid rounded-top w-100" alt="">
                            </div>
                             <div class="service-content rounded-bottom bg-light p-4">
                                 <div class="service-content-inner">
-                                    <h5 class="mb-4">Message Therapy</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
+                                    <h5 class="mb-4"><?php echo"$t[judul]"; ?></h5>
+                                    <p class="mb-4"><?php echo"$t[isi]"; ?></p>
                                     <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-2.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Physiotherapy</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-3.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Heat & Cold Therapy</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-4.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Chiropatic Therapy</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-5.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Work Injuries</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-6.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Spot Injuries</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-7.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Regular Therapy</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="service-item rounded">
-                           <div class="service-img rounded-top">
-                                <img src="img/service-8.jpg" class="img-fluid rounded-top w-100" alt="">
-                           </div>
-                            <div class="service-content rounded-bottom bg-light p-4">
-                                <div class="service-content-inner">
-                                    <h5 class="mb-4">Back Pain</h5>
-                                    <p class="mb-4">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus, dolor qui ullam</p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
                         <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Services More</a>
                     </div>
@@ -216,24 +113,24 @@ include "koneksi.php";
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
                         <div class="about-img pb-5 ps-5">
-                            <img src="img/about-1.jpg" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Image">
+                            <img src="tema/img/about-1.jpg" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Image">
                             <div class="about-img-inner">
-                                <img src="img/about-2.jpg" class="img-fluid rounded-circle w-100 h-100" alt="Image">
+                                <img src="tema/img/about-2.jpg" class="img-fluid rounded-circle w-100 h-100" alt="Image">
                             </div>
-                            <div class="about-experience">15 years experience</div>
+                            <div class="about-experience">9 years experience</div>
                         </div>
                     </div>
                     <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
                         <div class="section-title text-start mb-5">
-                            <h4 class="sub-title pe-3 mb-0">About Us</h4>
-                            <h1 class="display-3 mb-4">We are Ready to Help Improve Your Treatment.</h1>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
-                            <div class="mb-4">
+                            <h4 class="sub-title pe-3 mb-0">Tentang Kami</h4>
+                            <h1 class="display-3 mb-4">Kami siap membantu anda dalam pengobatan</h1>
+                            <p class="mb-4"><?php echo"$k_k[isi]";?></p>
+                            <!-- <div class="mb-4">
                                 <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Refresing to get such a personal touch.</p>
                                 <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Duis aute irure dolor in reprehenderit in voluptate.</p>
                                 <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                            <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">Discover More</a>
+                            </div> -->
+                            <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">Kujungi Kami</a>
                         </div>
                     </div>
                 </div>
@@ -408,7 +305,7 @@ include "koneksi.php";
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="video h-100">
-                                        <img src="img/video-img.jpg" class="img-fluid rounded w-100 h-100" style="object-fit: cover;" alt="">
+                                        <img src="tema/img/video-img.jpg" class="img-fluid rounded w-100 h-100" style="object-fit: cover;" alt="">
                                         <button type="button" class="btn btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
                                             <span></span>
                                         </button>
@@ -499,7 +396,7 @@ include "koneksi.php";
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item rounded">
                             <div class="team-img rounded-top h-100">
-                                <img src="img/team-1.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <img src="tema/img/team-1.jpg" class="img-fluid rounded-top w-100" alt="">
                                 <div class="team-icon d-flex justify-content-center">
                                     <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -516,7 +413,7 @@ include "koneksi.php";
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-item rounded">
                             <div class="team-img rounded-top h-100">
-                                <img src="img/team-2.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <img src="tema/img/team-2.jpg" class="img-fluid rounded-top w-100" alt="">
                                 <div class="team-icon d-flex justify-content-center">
                                     <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -533,7 +430,7 @@ include "koneksi.php";
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item rounded">
                             <div class="team-img rounded-top h-100">
-                                <img src="img/team-3.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <img src="tema/img/team-3.jpg" class="img-fluid rounded-top w-100" alt="">
                                 <div class="team-icon d-flex justify-content-center">
                                     <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -550,7 +447,7 @@ include "koneksi.php";
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="team-item rounded">
                             <div class="team-img rounded-top h-100">
-                                <img src="img/team-4.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <img src="tema/img/team-4.jpg" class="img-fluid rounded-top w-100" alt="">
                                 <div class="team-icon d-flex justify-content-center">
                                     <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -583,7 +480,7 @@ include "koneksi.php";
                     <div class="testimonial-item">
                         <div class="testimonial-inner p-5">
                             <div class="testimonial-inner-img mb-4">
-                                <img src="img/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
+                                <img src="tema/img/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
                             </div>
                             <p class="text-white fs-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
                             </p>
@@ -603,7 +500,7 @@ include "koneksi.php";
                     <div class="testimonial-item">
                         <div class="testimonial-inner p-5">
                             <div class="testimonial-inner-img mb-4">
-                                <img src="img/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
+                                <img src="tema/img/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
                             </div>
                             <p class="text-white fs-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
                             </p>
@@ -623,7 +520,7 @@ include "koneksi.php";
                     <div class="testimonial-item">
                         <div class="testimonial-inner p-5">
                             <div class="testimonial-inner-img mb-4">
-                                <img src="img/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
+                                <img src="tema/img/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
                             </div>
                             <p class="text-white fs-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
                             </p>
@@ -660,7 +557,7 @@ include "koneksi.php";
                     <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="blog-item rounded">
                             <div class="blog-img">
-                                <img src="img/blog-1.jpg" class="img-fluid w-100" alt="Image">
+                                <img src="tema/img/blog-1.jpg" class="img-fluid w-100" alt="Image">
                             </div>
                             <div class="blog-centent p-4">
                                 <div class="d-flex justify-content-between mb-4">
@@ -676,7 +573,7 @@ include "koneksi.php";
                     <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="blog-item rounded">
                             <div class="blog-img">
-                                <img src="img/blog-2.jpg" class="img-fluid w-100" alt="Image">
+                                <img src="tema/img/blog-2.jpg" class="img-fluid w-100" alt="Image">
                             </div>
                             <div class="blog-centent p-4">
                                 <div class="d-flex justify-content-between mb-4">
@@ -692,7 +589,7 @@ include "koneksi.php";
                     <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="blog-item rounded">
                             <div class="blog-img">
-                                <img src="img/blog-3.jpg" class="img-fluid w-100" alt="Image">
+                                <img src="tema/img/blog-3.jpg" class="img-fluid w-100" alt="Image">
                             </div>
                             <div class="blog-centent p-4">
                                 <div class="d-flex justify-content-between mb-4">

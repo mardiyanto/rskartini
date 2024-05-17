@@ -91,101 +91,233 @@ elseif($_GET['aksi']=='editpro'){
 	}
 }
 elseif($_GET['aksi']=='prosesedithalaman'){
-	if (empty($_POST[jd]) || empty($_POST[isi])){
-		echo "<script>window.alert('Data yang Anda isikan belum lengkap');
-			   window.location=('javascript:history.go(-1)')</script>";
+	if (empty($_POST['jd']) || empty($_POST['isi'])) {
+		echo "<script>
+				window.alert('Data yang Anda isikan belum lengkap');
+				window.location=('javascript:history.go(-1)');
+			  </script>";
+	} else {
+		$lokasi_file = $_FILES['gambar']['tmp_name'];
+		if (empty($lokasi_file)) {
+			mysqli_query($koneksi, "UPDATE berita SET judul='{$_POST['jd']}', tanggal='$date', isi='{$_POST['isi']}' WHERE id_berita='{$_GET['id_b']}'");
+			echo "<script>
+					window.location=('index.php?aksi=halaman');
+				  </script>";
+		} else {
+			if (empty($_GET['gb'])) {
+				$tanggal = date("dmYhis");
+				$file = $_FILES['gambar']['tmp_name'];
+				$file_name = $_FILES['gambar']['name'];
+				$target_file = "../foto/data/" . $tanggal . ".jpg";
+				if (move_uploaded_file($file, $target_file)) {
+					mysqli_query($koneksi, "UPDATE berita SET judul='{$_POST['jd']}', tanggal='$date', isi='{$_POST['isi']}', gambar='$tanggal.jpg' WHERE id_berita='{$_GET['id_b']}'");
+					echo "<script>
+							window.location=('index.php?aksi=halaman');
+						  </script>";
+				} else {
+					echo "<script>
+							window.alert('Gagal mengunggah gambar');
+							window.location=('javascript:history.go(-1)');
+						  </script>";
+				}
+			} else {
+				$a = $_GET['gb'];
+				$file = $_FILES['gambar']['tmp_name'];
+				$file_name = $_FILES['gambar']['name'];
+				$target_file = "../foto/data/" . $a;
+				if (move_uploaded_file($file, $target_file)) {
+					mysqli_query($koneksi, "UPDATE berita SET judul='{$_POST['jd']}', tanggal='$date', isi='{$_POST['isi']}' WHERE id_berita='{$_GET['id_b']}'");
+					echo "<script>
+							window.location=('index.php?aksi=halaman');
+						  </script>";
+				} else {
+					echo "<script>
+							window.alert('Gagal mengunggah gambar');
+							window.location=('javascript:history.go(-1)');
+						  </script>";
+				}
 			}
-        else{
-		   
-	   $lokasi_file=$_FILES[gambar][tmp_name];
-	   if(empty($lokasi_file)){
-	   
-	   mysqli_query($koneksi,"UPDATE berita SET judul='$_POST[jd]', tanggal='$date',  isi='$_POST[isi]' WHERE id_berita='$_GET[id_b]'");
-	   echo "<script>window.location=('index.php?aksi=halaman')</script>";
-	   
-	   }else{
-	   if($_GET[gb]==''){
-	   $tanggal=date("dmYhis");
-	   $file=$_FILES['gambar']['tmp_name'];
-	   $file_name=$_FILES['gambar']['name'];
-	   copy($file,"../foto/data/".$tanggal.".jpg");
-	   mysqli_query($koneksi,"UPDATE berita SET judul='$_POST[jd]', tanggal='$date',  isi='$_POST[isi]',gambar='$tanggal.jpg' WHERE id_berita='$_GET[id_b]'");
-	   echo "<script>window.location=('index.php?aksi=halaman')</script>";
-	   }else{
-	   
-	   
-	   $a=$_GET['gb'];
-	   $file=$_FILES['gambar']['tmp_name'];
-	   $file_name=$_FILES['gambar']['name'];
-	   copy($file,"../foto/data/".$a);
-	   mysqli_query($koneksi,"UPDATE berita SET judul='$_POST[jd]', tanggal='$date',  isi='$_POST[isi]' WHERE id_berita='$_GET[id_b]'");
-	   echo "<script>window.location=('index.php?aksi=halaman')</script>";
-		   }
-		  }
-		 } 
+		}
+	}
+}
+elseif($_GET['aksi']=='proseseditpoli'){
+	if (empty($_POST['jd']) || empty($_POST['isi'])) {
+		echo "<script>
+				window.alert('Data yang Anda isikan belum lengkap');
+				window.location=('javascript:history.go(-1)');
+			  </script>";
+	} else {
+		$lokasi_file = $_FILES['gambar']['tmp_name'];
+		if (empty($lokasi_file)) {
+			mysqli_query($koneksi, "UPDATE berita SET judul='{$_POST['jd']}', tanggal='$date', isi='{$_POST['isi']}' WHERE id_berita='{$_GET['id_b']}'");
+			echo "<script>
+					window.location=('index.php?aksi=poli');
+				  </script>";
+		} else {
+			if (empty($_GET['gb'])) {
+				$tanggal = date("dmYhis");
+				$file = $_FILES['gambar']['tmp_name'];
+				$file_name = $_FILES['gambar']['name'];
+				$target_file = "../foto/data/" . $tanggal . ".jpg";
+				if (move_uploaded_file($file, $target_file)) {
+					mysqli_query($koneksi, "UPDATE berita SET judul='{$_POST['jd']}', tanggal='$date', isi='{$_POST['isi']}', gambar='$tanggal.jpg' WHERE id_berita='{$_GET['id_b']}'");
+					echo "<script>
+							window.location=('index.php?aksi=poli');
+						  </script>";
+				} else {
+					echo "<script>
+							window.alert('Gagal mengunggah gambar');
+							window.location=('javascript:history.go(-1)');
+						  </script>";
+				}
+			} else {
+				$a = $_GET['gb'];
+				$file = $_FILES['gambar']['tmp_name'];
+				$file_name = $_FILES['gambar']['name'];
+				$target_file = "../foto/data/" . $a;
+				if (move_uploaded_file($file, $target_file)) {
+					mysqli_query($koneksi, "UPDATE berita SET judul='{$_POST['jd']}', tanggal='$date', isi='{$_POST['isi']}' WHERE id_berita='{$_GET['id_b']}'");
+					echo "<script>
+							window.location=('index.php?aksi=poli');
+						  </script>";
+				} else {
+					echo "<script>
+							window.alert('Gagal mengunggah gambar');
+							window.location=('javascript:history.go(-1)');
+						  </script>";
+				}
+			}
+		}
+	}
 }
 elseif($_GET['aksi']=='proseseditgaleri'){
-	if (empty($_POST[jd]) || empty($_POST[isi])){
-		echo "<script>window.alert('Data yang Anda isikan belum lengkap');
-			   window.location=('javascript:history.go(-1)')</script>";
-			}else{
-			
-	   $lokasi_file=$_FILES[gambar][tmp_name];
-	   if(empty($lokasi_file)){
-	   mysqli_query($koneksi,"UPDATE galeri SET judul='$_POST[jd]', keterangan='$_POST[isi]' WHERE id_galeri='$_GET[id_g]'");
-	   echo "<script>window.location=('index.php?aksi=galeri')</script>";
-	   }else{
-	   $a=$_GET['gb'];
-	   $file=$_FILES['gambar']['tmp_name'];
-	   $file_name=$_FILES['gambar']['name'];
-	   copy($file,"../foto/galleri/".$a);
-	   mysqli_query($koneksi,"UPDATE galeri SET judul='$_POST[jd]', keterangan='$_POST[isi]' WHERE id_galeri='$_GET[id_g]'");
-		  
-	   echo "<script>window.location=('index.php?aksi=galeri')</script>";
-		  }
-		 } 
+	if (empty($_POST['jd']) || empty($_POST['isi'])) {
+		echo "<script>
+				window.alert('Data yang Anda isikan belum lengkap');
+				window.location=('javascript:history.go(-1)');
+			  </script>";
+	} else {
+		$lokasi_file = $_FILES['gambar']['tmp_name'];
+		if (empty($lokasi_file)) {
+			mysqli_query($koneksi, "UPDATE galeri SET judul='{$_POST['jd']}', keterangan='{$_POST['isi']}' WHERE id_galeri='{$_GET['id_g']}'");
+			echo "<script>
+					window.location=('index.php?aksi=galeri');
+				  </script>";
+		} else {
+			$a = $_GET['gb'];
+			$file = $_FILES['gambar']['tmp_name'];
+			$file_name = $_FILES['gambar']['name'];
+			$target_file = "../foto/galeri/" . $a;
+			if (move_uploaded_file($file, $target_file)) {
+				mysqli_query($koneksi, "UPDATE galeri SET judul='{$_POST['jd']}', keterangan='{$_POST['isi']}' WHERE id_galeri='{$_GET['id_g']}'");
+				echo "<script>
+						window.location=('index.php?aksi=galeri');
+					  </script>";
+			} else {
+				echo "<script>
+						window.alert('Gagal mengunggah gambar');
+						window.location=('javascript:history.go(-1)');
+					  </script>";
+			}
+		}
+	}
+}
+elseif($_GET['aksi']=='proseseditslide'){
+	if (empty($_POST['jd']) || empty($_POST['isi'])) {
+		echo "<script>
+				window.alert('Data yang Anda isikan belum lengkap');
+				window.location=('javascript:history.go(-1)');
+			  </script>";
+	} else {
+		$lokasi_file = $_FILES['gambar']['tmp_name'];
+		if (empty($lokasi_file)) {
+			mysqli_query($koneksi, "UPDATE galeri SET judul='{$_POST['jd']}', keterangan='{$_POST['isi']}' WHERE id_galeri='{$_GET['id_g']}'");
+			echo "<script>
+					window.location=('index.php?aksi=slide');
+				  </script>";
+		} else {
+			$a = $_GET['gb'];
+			$file = $_FILES['gambar']['tmp_name'];
+			$file_name = $_FILES['gambar']['name'];
+			$target_file = "../foto/galeri/" . $a;
+			if (move_uploaded_file($file, $target_file)) {
+				mysqli_query($koneksi, "UPDATE galeri SET judul='{$_POST['jd']}', keterangan='{$_POST['isi']}' WHERE id_galeri='{$_GET['id_g']}'");
+				echo "<script>
+						window.location=('index.php?aksi=slide');
+					  </script>";
+			} else {
+				echo "<script>
+						window.alert('Gagal mengunggah gambar');
+						window.location=('javascript:history.go(-1)');
+					  </script>";
+			}
+		}
+	}
 }
 elseif($_GET['aksi']=='proseseditalumni'){
-	if (empty($_POST[nama]) || empty($_POST[pekerjaan])){
-		echo "<script>window.alert('Data yang Anda isikan belum lengkap');
-			   window.location=('javascript:history.go(-1)')</script>";
-			}else{
-			
-	   $lokasi_file=$_FILES[gambar][tmp_name];
-	   if(empty($lokasi_file)){
-	   mysqli_query($koneksi,"UPDATE alumni SET nama='$_POST[nama]', pekerjaan='$_POST[pekerjaan]',  keterangan='$_POST[keterangan]' WHERE id_alumni='$_GET[id_alumni]'");
-	   echo "<script>window.location=('index.php?aksi=alumni')</script>";
-	   }else{
-	   $a=$_GET['gb'];
-	   $file=$_FILES['gambar']['tmp_name'];
-	   $file_name=$_FILES['gambar']['name'];
-	   copy($file,"../foto/alumni/".$a);
-	   mysqli_query($koneksi,"UPDATE alumni SET nama='$_POST[nama]', pekerjaan='$_POST[pekerjaan]',  keterangan='$_POST[keterangan]' WHERE id_alumni='$_GET[id_alumni]'");
-		  
-	   echo "<script>window.location=('index.php?aksi=alumni')</script>";
-		  }
-		 } 
+	if (empty($_POST['nama']) || empty($_POST['pekerjaan'])) {
+		echo "<script>
+				window.alert('Data yang Anda isikan belum lengkap');
+				window.location=('javascript:history.go(-1)');
+			  </script>";
+	} else {
+		$lokasi_file = $_FILES['gambar']['tmp_name'];
+		if (empty($lokasi_file)) {
+			$keterangan = isset($_POST['keterangan']) ? $_POST['keterangan'] : '';
+			mysqli_query($koneksi, "UPDATE alumni SET nama='{$_POST['nama']}', pekerjaan='{$_POST['pekerjaan']}', keterangan='{$keterangan}' WHERE id_alumni='{$_GET['id_alumni']}'");
+			echo "<script>
+					window.location=('index.php?aksi=alumni');
+				  </script>";
+		} else {
+			$a = $_GET['gb'];
+			$file = $_FILES['gambar']['tmp_name'];
+			$file_name = $_FILES['gambar']['name'];
+			$target_file = "../foto/alumni/" . $a;
+			if (move_uploaded_file($file, $target_file)) {
+				mysqli_query($koneksi, "UPDATE alumni SET nama='{$_POST['nama']}', pekerjaan='{$_POST['pekerjaan']}', keterangan='{$_POST['keterangan']}' WHERE id_alumni='{$_GET['id_alumni']}'");
+				echo "<script>
+						window.location=('index.php?aksi=alumni');
+					  </script>";
+			} else {
+				echo "<script>
+						window.alert('Gagal mengunggah gambar');
+						window.location=('javascript:history.go(-1)');
+					  </script>";
+			}
+		}
+	}
 }
 elseif($_GET['aksi']=='proseseditpegawai'){
-	if (empty($_POST[nama]) || empty($_POST[keterangan])){
-		echo "<script>window.alert('Data yang Anda isikan belum lengkap');
-			   window.location=('javascript:history.go(-1)')</script>";
-			}else{
-			
-	   $lokasi_file=$_FILES[gambar][tmp_name];
-	   if(empty($lokasi_file)){
-	   mysqli_query($koneksi,"UPDATE pegawai SET nama='$_POST[nama]',  keterangan='$_POST[keterangan]' WHERE id_pegawai='$_GET[id_pegawai]'");
-	   echo "<script>window.location=('index.php?aksi=pegawai')</script>";
-	   }else{
-	   $a=$_GET['gb'];
-	   $file=$_FILES['gambar']['tmp_name'];
-	   $file_name=$_FILES['gambar']['name'];
-	   copy($file,"../foto/pegawai/".$a);
-	   mysqli_query($koneksi,"UPDATE pegawai SET nama='$_POST[nama]',  keterangan='$_POST[keterangan]' WHERE id_pegawai='$_GET[id_pegawai]'");
-		  
-	   echo "<script>window.location=('index.php?aksi=pegawai')</script>";
-		  }
-		 } 
+	if (empty($_POST['nama']) || empty($_POST['keterangan'])) {
+		echo "<script>
+				window.alert('Data yang Anda isikan belum lengkap');
+				window.location=('javascript:history.go(-1)');
+			  </script>";
+	} else {
+		$lokasi_file = $_FILES['gambar']['tmp_name'];
+		if (empty($lokasi_file)) {
+			mysqli_query($koneksi, "UPDATE pegawai SET nama='{$_POST['nama']}', keterangan='{$_POST['keterangan']}' WHERE id_pegawai='{$_GET['id_pegawai']}'");
+			echo "<script>
+					window.location=('index.php?aksi=pegawai');
+				  </script>";
+		} else {
+			$a = $_GET['gb'];
+			$file = $_FILES['gambar']['tmp_name'];
+			$file_name = $_FILES['gambar']['name'];
+			$target_file = "../foto/pegawai/" . $a;
+			if (move_uploaded_file($file, $target_file)) {
+				mysqli_query($koneksi, "UPDATE pegawai SET nama='{$_POST['nama']}', keterangan='{$_POST['keterangan']}' WHERE id_pegawai='{$_GET['id_pegawai']}'");
+				echo "<script>
+						window.location=('index.php?aksi=pegawai');
+					  </script>";
+			} else {
+				echo "<script>
+						window.alert('Gagal mengunggah gambar');
+						window.location=('javascript:history.go(-1)');
+					  </script>";
+			}
+		}
+	}
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 elseif($_GET['aksi']=='proseseditmenu'){

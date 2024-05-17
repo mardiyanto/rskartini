@@ -74,68 +74,167 @@ elseif($_GET['aksi']=='inputhalaman'){
 		}
 	}
 }
+elseif($_GET['aksi']=='inputpoli'){
+	if (empty($_POST['jd']) || empty($_POST['isi'])) {
+		echo "<script>
+				window.alert('Data yang Anda isikan belum lengkap');
+				window.location=('javascript:history.go(-1)');
+			  </script>";
+	} else {
+		$lokasi_file = $_FILES['gambar']['tmp_name'];
+		if (empty($lokasi_file)) {
+			mysqli_query($koneksi, "INSERT INTO berita (judul, tanggal, isi, jenis) VALUES ('$_POST[jd]', '$date', '$_POST[isi]', 'poli')");
+	
+			echo "<script>
+					window.location=('index.php?aksi=poli');
+				  </script>";
+		} else {
+			$tanggal = date("dmYhis");
+			$file_name = $_FILES['gambar']['name'];
+			$target_file = "../foto/data/" . $tanggal . ".jpg";
+			if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target_file)) {
+				mysqli_query($koneksi, "INSERT INTO berita (judul, tanggal, isi, gambar, jenis) VALUES ('$_POST[jd]', '$date', '$_POST[isi]', '$tanggal.jpg', 'poli')");
+	
+				echo "<script>
+						window.location=('index.php?aksi=poli');
+					  </script>";
+			} else {
+				echo "<script>
+						window.alert('Gagal mengunggah gambar');
+						window.location=('javascript:history.go(-1)');
+					  </script>";
+			}
+		}
+	}
+}
 elseif($_GET['aksi']=='inputgaleri'){
-	if (empty($_POST[jd]) || empty($_POST[isi])){
-		echo "<script>window.alert('Data yang Anda isikan belum lengkap');
-			   window.location=('javascript:history.go(-1)')</script>";
-			}else{
-			
-	   $lokasi_file=$_FILES[gambar][tmp_name];
-	   if(empty($lokasi_file)){
-	   echo "<script>window.alert('File gambar masih kosong');
-			   window.location=('javascript:history.go(-1)')</script>";
-	   }else{
-	   $tanggal=date("dmYhis");
-	   $file=$_FILES['gambar']['tmp_name'];
-	   $file_name=$_FILES['gambar']['name'];
-	   copy($file,"../foto/galleri/".$tanggal.".jpg");
-	   mysqli_query($koneksi,"insert into galeri (judul,keterangan,gambar) values ('$_POST[jd]','$_POST[isi]','$tanggal.jpg')");
-		  
-	   echo "<script>window.location=('index.php?aksi=galeri')</script>";
-		  }
-		 } 
+	if (empty($_POST['jd']) || empty($_POST['isi'])) {
+		echo "<script>
+				window.alert('Data yang Anda isikan belum lengkap');
+				window.location=('javascript:history.go(-1)');
+			  </script>";
+	} else {
+		$lokasi_file = $_FILES['gambar']['tmp_name'];
+		if (empty($lokasi_file)) {
+			echo "<script>
+					window.alert('File gambar masih kosong');
+					window.location=('javascript:history.go(-1)');
+				  </script>";
+		} else {
+			$tanggal = date("dmYhis");
+			$file = $_FILES['gambar']['tmp_name'];
+			$file_name = $_FILES['gambar']['name'];
+			$target_file = "../foto/galeri/" . $tanggal . ".jpg";
+			if (move_uploaded_file($file, $target_file)) {
+				mysqli_query($koneksi, "INSERT INTO galeri (judul, keterangan, gambar, jenis) VALUES ('{$_POST['jd']}', '{$_POST['isi']}', '$tanggal.jpg', 'galeri')");
+				echo "<script>
+						window.location=('index.php?aksi=galeri');
+					  </script>";
+			} else {
+				echo "<script>
+						window.alert('Gagal mengunggah gambar');
+						window.location=('javascript:history.go(-1)');
+					  </script>";
+			}
+		}
+	}
+}
+elseif($_GET['aksi']=='inputslide'){
+	if (empty($_POST['jd']) || empty($_POST['isi'])) {
+		echo "<script>
+				window.alert('Data yang Anda isikan belum lengkap');
+				window.location=('javascript:history.go(-1)');
+			  </script>";
+	} else {
+		$lokasi_file = $_FILES['gambar']['tmp_name'];
+		if (empty($lokasi_file)) {
+			echo "<script>
+					window.alert('File gambar masih kosong');
+					window.location=('javascript:history.go(-1)');
+				  </script>";
+		} else {
+			$tanggal = date("dmYhis");
+			$file = $_FILES['gambar']['tmp_name'];
+			$file_name = $_FILES['gambar']['name'];
+			$target_file = "../foto/galeri/" . $tanggal . ".jpg";
+			if (move_uploaded_file($file, $target_file)) {
+				mysqli_query($koneksi, "INSERT INTO galeri (judul, keterangan, gambar, jenis) VALUES ('$_POST[jd]', '$_POST[isi]', '$tanggal.jpg', 'slide')");
+				echo "<script>
+						window.location=('index.php?aksi=slide');
+					  </script>";
+			} else {
+				echo "<script>
+						window.alert('Gagal mengunggah gambar');
+						window.location=('javascript:history.go(-1)');
+					  </script>";
+			}
+		}
+	}
 }
 elseif($_GET['aksi']=='inputalumni'){
-	if (empty($_POST[nama]) || empty($_POST[pekerjaan])){
-		echo "<script>window.alert('Data yang Anda isikan belum lengkap');
-			   window.location=('javascript:history.go(-1)')</script>";
-			}else{
-			
-	   $lokasi_file=$_FILES['gambar']['tmp_name'];
-	   if(empty($lokasi_file)){
-	   echo "<script>window.alert('File gambar masih kosong');
-			   window.location=('javascript:history.go(-1)')</script>";
-	   }else{
-	   $tanggal=date("dmYhis");
-	   $file=$_FILES['gambar']['tmp_name'];
-	   $file_name=$_FILES['gambar']['name'];
-	   copy($file,"../foto/alumni/".$tanggal.".jpg");
-	   mysqli_query($koneksi,"insert into alumni (nama,pekerjaan,keterangan,gambar) values ('$_POST[nama]','$_POST[pekerjaan]','$_POST[keterangan]','$tanggal.jpg')");
-		  
-	   echo "<script>window.location=('index.php?aksi=alumni')</script>";
-		  }
-		 } 
+	if (empty($_POST['nama']) || empty($_POST['pekerjaan'])) {
+		echo "<script>
+				window.alert('Data yang Anda isikan belum lengkap');
+				window.location=('javascript:history.go(-1)');
+			  </script>";
+	} else {
+		$lokasi_file = $_FILES['gambar']['tmp_name'];
+		if (empty($lokasi_file)) {
+			echo "<script>
+					window.alert('File gambar masih kosong');
+					window.location=('javascript:history.go(-1)');
+				  </script>";
+		} else {
+			$tanggal = date("dmYhis");
+			$file = $_FILES['gambar']['tmp_name'];
+			$file_name = $_FILES['gambar']['name'];
+			$target_file = "../foto/alumni/" . $tanggal . ".jpg";
+			if (move_uploaded_file($file, $target_file)) {
+				$keterangan = isset($_POST['keterangan']) ? $_POST['keterangan'] : '';
+				mysqli_query($koneksi, "INSERT INTO alumni (nama, pekerjaan, keterangan, gambar) VALUES ('{$_POST['nama']}', '{$_POST['pekerjaan']}', '{$keterangan}', '$tanggal.jpg')");
+				echo "<script>
+						window.location=('index.php?aksi=alumni');
+					  </script>";
+			} else {
+				echo "<script>
+						window.alert('Gagal mengunggah gambar');
+						window.location=('javascript:history.go(-1)');
+					  </script>";
+			}
+		}
+	}
 }
 elseif($_GET['aksi']=='inputpegawai'){
-	if (empty($_POST[nama]) || empty($_POST[keterangan])){
-		echo "<script>window.alert('Data yang Anda isikan belum lengkap');
-			   window.location=('javascript:history.go(-1)')</script>";
-			}else{
-			
-	   $lokasi_file=$_FILES['gambar']['tmp_name'];
-	   if(empty($lokasi_file)){
-	   echo "<script>window.alert('File gambar masih kosong');
-			   window.location=('javascript:history.go(-1)')</script>";
-	   }else{
-	   $tanggal=date("dmYhis");
-	   $file=$_FILES['gambar']['tmp_name'];
-	   $file_name=$_FILES['gambar']['name'];
-	   copy($file,"../foto/pegawai/".$tanggal.".jpg");
-	   mysqli_query($koneksi,"insert into pegawai (nama,keterangan,gambar) values ('$_POST[nama]','$_POST[keterangan]','$tanggal.jpg')");
-		  
-	   echo "<script>window.location=('index.php?aksi=pegawai')</script>";
-		  }
-		 } 
+	if (empty($_POST['nama']) || empty($_POST['keterangan'])) {
+		echo "<script>
+				window.alert('Data yang Anda isikan belum lengkap');
+				window.location=('javascript:history.go(-1)');
+			  </script>";
+	} else {
+		$lokasi_file = $_FILES['gambar']['tmp_name'];
+		if (empty($lokasi_file)) {
+			echo "<script>
+					window.alert('File gambar masih kosong');
+					window.location=('javascript:history.go(-1)');
+				  </script>";
+		} else {
+			$tanggal = date("dmYhis");
+			$file = $_FILES['gambar']['tmp_name'];
+			$file_name = $_FILES['gambar']['name'];
+			$target_file = "../foto/pegawai/" . $tanggal . ".jpg";
+			if (move_uploaded_file($file, $target_file)) {
+				mysqli_query($koneksi, "INSERT INTO pegawai (nama, keterangan, gambar) VALUES ('{$_POST['nama']}', '{$_POST['keterangan']}', '$tanggal.jpg')");
+				echo "<script>
+						window.location=('index.php?aksi=pegawai');
+					  </script>";
+			} else {
+				echo "<script>
+						window.alert('Gagal mengunggah gambar');
+						window.location=('javascript:history.go(-1)');
+					  </script>";
+			}
+		}
+	}
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 elseif($_GET['aksi']=='inputmenu'){

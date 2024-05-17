@@ -20,11 +20,18 @@ elseif($_GET['aksi']=='hapushalaman'){
   unlink($pathFile);
   echo "<script>window.location=('index.php?aksi=halaman')</script>";
 }
+elseif($_GET['aksi']=='hapuspoli'){
+  mysqli_query($koneksi,"DELETE FROM berita WHERE id_berita='$_GET[id_b]'");
+  $b=$_GET['gbr'];
+  $pathFile="../foto/data/$b";	   
+  unlink($pathFile);
+  echo "<script>window.location=('index.php?aksi=poli')</script>";
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 elseif($_GET['aksi']=='hapusgaleri'){
   mysqli_query($koneksi,"DELETE FROM galeri WHERE id_galeri='$_GET[id_g]'");
   $b=$_GET['gbr'];
-  $pathFile="../foto/galleri/$b";	   
+  $pathFile="../foto/galeri/$b";	   
   unlink($pathFile);
 echo "<script>window.location=('index.php?aksi=galeri')</script>";
 }
