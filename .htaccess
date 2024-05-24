@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^berita-([a-zA-Z0-9]+)-([0-9]+)$ utama.php?aksi=detailberita&id_sesi=$1&id_berita=$2 [L]
+RewriteRule ^halaman-(.*)$ utama.php?aksi=$1 [L]

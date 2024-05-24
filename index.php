@@ -71,7 +71,7 @@ include "koneksi.php";
 
 
         <!-- Services Start -->
-        <div class="container-fluid service py-5">
+        <div id="poli" class="container-fluid service py-5">
             <div class="container py-5">
                 <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="sub-style">
@@ -91,8 +91,12 @@ include "koneksi.php";
                             <div class="service-content rounded-bottom bg-light p-4">
                                 <div class="service-content-inner">
                                     <h5 class="mb-4"><?php echo"$t[judul]"; ?></h5>
-                                    <p class="mb-4"><?php echo"$t[isi]"; ?></p>
-                                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
+                                    <p class="mb-4"><?php 
+                                $isi_berita = strip_tags($t['isi']); 
+                                $isi = substr($isi_berita,0,100); 
+                                $isi = substr($isi_berita,0,strrpos($isi," ")); 
+                                 echo"$isi";?></p>
+                                    <a href="berita-<?php echo"$t[id_sesi]";?>-<?php echo"$t[id_berita]";?>" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -108,15 +112,12 @@ include "koneksi.php";
 
 
         <!-- About Start -->
-        <div class="container-fluid about bg-light py-5">
+        <div id="tentang" class="container-fluid about bg-light py-5">
             <div class="container py-5">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
                         <div class="about-img pb-5 ps-5">
-                            <img src="tema/img/about-1.jpg" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Image">
-                            <div class="about-img-inner">
-                                <img src="tema/img/about-2.jpg" class="img-fluid rounded-circle w-100 h-100" alt="Image">
-                            </div>
+                            <img src="foto/<?php echo"$k_k[gambar]";?>" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Image">
                             <div class="about-experience">9 years experience</div>
                         </div>
                     </div>
@@ -143,10 +144,10 @@ include "koneksi.php";
             <div class="container py-5">
                 <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="sub-style">
-                        <h4 class="sub-title px-3 mb-0">Why Choose Us</h4>
+                        <h4 class="sub-title px-3 mb-0">Kenapa Memelih Kami</h4>
                     </div>
-                    <h1 class="display-3 mb-4">Why Choose Us? Get Your Life Style Back</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
+                    <h1 class="display-3 mb-4">Jadikan Kesahatan Anda Jadi Lebih Baik</h1>
+                    <!-- <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p> -->
                 </div>
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
@@ -158,8 +159,8 @@ include "koneksi.php";
                                     </div>
                                 </div>
                                 <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Licensed Therapist</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
+                                    <h5 class="mb-4">Dokter Spesialis</h5>
+                                    <p class="mb-0">Ahli medis terpercaya, pengalaman terkini, solusi kesehatan terdepan.</p>
                                 </div>
                             </div>
                         </div>
@@ -173,8 +174,8 @@ include "koneksi.php";
                                     </div>
                                 </div>
                                 <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Personalized Treatment</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
+                                    <h5 class="mb-4">Pelayanan Ramah</h5>
+                                    <p class="mb-0">Kami memberikan pelayanan ramah, mengutamakan kenyamanan dan kepercayaan Anda</p>
                                 </div>
                             </div>
                         </div>
@@ -188,8 +189,8 @@ include "koneksi.php";
                                     </div>
                                 </div>
                                 <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Therapy Goals</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
+                                    <h5 class="mb-4">Perawat Profesional</h5>
+                                    <p class="mb-0">Perawat berpengalaman, penuh dedikasi, memberikan perhatian terbaik kepada Anda</p>
                                 </div>
                             </div>
                         </div>
@@ -203,8 +204,8 @@ include "koneksi.php";
                                     </div>
                                 </div>
                                 <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Practitioners Network</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
+                                    <h5 class="mb-4">Fasilas Lengkap</h5>
+                                    <p class="mb-0">Fasilitas lengkap, modern, memberikan kenyamanan dan kepercayaan kepada anda.</p>
                                 </div>
                             </div>
                         </div>
@@ -218,8 +219,8 @@ include "koneksi.php";
                                     </div>
                                 </div>
                                 <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Comfortable Center</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
+                                    <h5 class="mb-4">UGD/IGD 24 JAM</h5>
+                                    <p class="mb-0">UGD/IGD selalu buka 24/7, siap memberikan layanan darurat kapanpun.</p>
                                 </div>
                             </div>
                         </div>
@@ -233,8 +234,8 @@ include "koneksi.php";
                                     </div>
                                 </div>
                                 <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Experienced Stuff</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
+                                    <h5 class="mb-4">Dokter Umum</h5>
+                                    <p class="mb-0">Dokter IGD/IGD siap melayani Anda dalam situasi darurat.</p>
                                 </div>
                             </div>
                         </div>
@@ -248,8 +249,8 @@ include "koneksi.php";
                                     </div>
                                 </div>
                                 <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Therapy Goals</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
+                                    <h5 class="mb-4">Gratis Pelayanan</h5>
+                                    <p class="mb-0">Pelayanan gratis untuk pemegang BPJS, komitmen kami untuk kesehatan Anda</p>
                                 </div>
                             </div>
                         </div>
@@ -263,8 +264,8 @@ include "koneksi.php";
                                     </div>
                                 </div>
                                 <div class="feature-content d-flex flex-column">
-                                    <h5 class="mb-4">Licensed Therapist</h5>
-                                    <p class="mb-0">Dolor, sit amet consectetur adipisicing elit. Soluta inventore cum accusamus,</p>
+                                    <h5 class="mb-4">Biaya Terjangkau</h5>
+                                    <p class="mb-0">Biaya terjangkau, pelayanan berkualitas untuk semua kalangan.</p>
                                 </div>
                             </div>
                         </div>
@@ -279,7 +280,7 @@ include "koneksi.php";
 
 
         <!-- Book Appointment Start -->
-        <div class="container-fluid appointment py-5">
+        <!-- <div class="container-fluid appointment py-5">
             <div class="container py-5">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2">
@@ -360,7 +361,7 @@ include "koneksi.php";
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Modal Video -->
         <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -383,87 +384,45 @@ include "koneksi.php";
 
 
         <!-- Team Start -->
-        <div class="container-fluid team py-5">
+        <div id="dokter" class="container-fluid team py-5">
             <div class="container py-5">
                 <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="sub-style">
-                        <h4 class="sub-title px-3 mb-0">Meet our team</h4>
+                        <h4 class="sub-title px-3 mb-0">Dokter Kami</h4>
                     </div>
-                    <h1 class="display-3 mb-4">Physiotherapy Services from Professional Therapist</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
+                    <h1 class="display-3 mb-4">Dokter Kami siap Membantu Anda</h1>
+                  <p class="mb-0">Kami Memberikan Pelayanan Terbaik, bukan paling baik</p> 
                 </div>
                 <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                <?php   $tebaru=mysqli_query($koneksi," SELECT * FROM pegawai ORDER BY id_pegawai DESC  LIMIT 4");
+                       while ($t=mysqli_fetch_array($tebaru)){	?>
+                   <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item rounded">
                             <div class="team-img rounded-top h-100">
-                                <img src="tema/img/team-1.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <img src="foto/pegawai/<?php echo"$t[gambar]";?>" class="img-fluid rounded-top w-100" alt="">
                                 <div class="team-icon d-flex justify-content-center">
                                     <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
                                     <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-youtube"></i></a>
                                 </div>
                             </div>
                             <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
-                                <h5>Full Name</h5>
-                                <p class="mb-0">Message Physio Therapist</p>
+                                <h5><?php echo"$t[nama]";?></h5>
+                                <p class="mb-0"><?php echo"$t[keterangan]";?> </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item rounded">
-                            <div class="team-img rounded-top h-100">
-                                <img src="tema/img/team-2.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon d-flex justify-content-center">
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
-                                <h5>Full Name</h5>
-                                <p class="mb-0">Rehabilitation Therapist</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item rounded">
-                            <div class="team-img rounded-top h-100">
-                                <img src="tema/img/team-3.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon d-flex justify-content-center">
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
-                                <h5>Full Name</h5>
-                                <p class="mb-0">Doctor of Physical therapy</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item rounded">
-                            <div class="team-img rounded-top h-100">
-                                <img src="tema/img/team-4.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon d-flex justify-content-center">
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
-                                <h5>Full Name</h5>
-                                <p class="mb-0">Doctor of Physical therapy</p>
-                            </div>
-                        </div>
-                    </div>
+                 <? } ?>
+                    
+                 <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="halaman-informasi" class="btn btn-primary rounded-pill text-white py-3 px-5">More Details</a>
+                    </div> 
+                    
                 </div>
             </div>
         </div>
+
         <!-- Team End -->
 
 
@@ -474,19 +433,21 @@ include "koneksi.php";
                     <div class="sub-style">
                         <h4 class="sub-title text-white px-3 mb-0">Testimonial</h4>
                     </div>
-                    <h1 class="display-3 mb-4">What Clients are Say</h1>
+                    <h1 class="display-3 mb-4">Testimoni Pasien Kami</h1>
                 </div>
                 <div class="testimonial-carousel owl-carousel">
+                <?php   $tebaru=mysqli_query($koneksi," SELECT * FROM alumni ORDER BY id_alumni DESC  LIMIT 4");
+                       while ($t=mysqli_fetch_array($tebaru)){	?>
                     <div class="testimonial-item">
                         <div class="testimonial-inner p-5">
                             <div class="testimonial-inner-img mb-4">
-                                <img src="tema/img/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
+                                <img src="foto/alumni/<?php echo"$t[gambar]";?>" class="img-fluid rounded-circle" alt="">
                             </div>
-                            <p class="text-white fs-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
+                            <p class="text-white fs-7"><?php echo"$t[keterangan]";?>
                             </p>
                             <div class="text-center">
-                                <h5 class="mb-2">John Abraham</h5>
-                                <p class="mb-2 text-white-50">New York, USA</p>
+                                <h5 class="mb-2"><?php echo"$t[nama]";?></h5>
+                                <p class="mb-2 text-white-50"><?php echo"$t[pekerjaan]";?></p>
                                 <div class="d-flex justify-content-center">
                                     <i class="fas fa-star text-secondary"></i>
                                     <i class="fas fa-star text-secondary"></i>
@@ -497,46 +458,8 @@ include "koneksi.php";
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-inner p-5">
-                            <div class="testimonial-inner-img mb-4">
-                                <img src="tema/img/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <p class="text-white fs-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
-                            </p>
-                            <div class="text-center">
-                                <h5 class="mb-2">John Abraham</h5>
-                                <p class="mb-2 text-white-50">New York, USA</p>
-                                <div class="d-flex justify-content-center">
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-inner p-5">
-                            <div class="testimonial-inner-img mb-4">
-                                <img src="tema/img/testimonial-img.jpg" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <p class="text-white fs-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores nemo facilis tempora esse explicabo sed! Dignissimos quia ullam pariatur blanditiis sed voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
-                            </p>
-                            <div class="text-center">
-                                <h5 class="mb-2">John Abraham</h5>
-                                <p class="mb-2 text-white-50">New York, USA</p>
-                                <div class="d-flex justify-content-center">
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                    <i class="fas fa-star text-secondary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <?php } ?>
+                    
                 </div>
             </div>
         </div>
@@ -544,67 +467,46 @@ include "koneksi.php";
 
 
         <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
+        <div id="informasi" class="container-fluid blog py-5">
             <div class="container py-5">
                 <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="sub-style">
-                        <h4 class="sub-title px-3 mb-0">Our Blog</h4>
+                        <h4 class="sub-title px-3 mb-0">Informasi</h4>
                     </div>
-                    <h1 class="display-3 mb-4">Excellent Facility and High Quality Therapy</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
-                </div>
+                    <h1 class="display-3 mb-4">Informasi Kami</h1>
+                    <!-- <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>-->
+                </div> 
                 <div class="row g-4 justify-content-center">
+                <?php   $tebaru=mysqli_query($koneksi," SELECT * FROM berita where jenis='informasi'  ORDER BY id_berita DESC  LIMIT 4");
+                       while ($t=mysqli_fetch_array($tebaru)){	?>
                     <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="blog-item rounded">
                             <div class="blog-img">
-                                <img src="tema/img/blog-1.jpg" class="img-fluid w-100" alt="Image">
+                                <img src="foto/data/<?php echo"$t[gambar]";?>" class="img-fluid w-100" alt="Image">
                             </div>
                             <div class="blog-centent p-4">
                                 <div class="d-flex justify-content-between mb-4">
-                                    <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 01 Jan 2045</p>
-                                    <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> 3 Comments</a>
+                                    <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> <?php echo"$t[tgl]";?></p>
+                                    <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> <?php echo"$t[dilihat]";?></a>
                                 </div>
-                                <a href="#" class="h4">Remove back Pain While Working on o physio</a>
-                                <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium hic consequatur beatae architecto,</p>
-                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Read More</a>
+                                <a href="#" class="h4"><?php echo"$t[judul]";?></a>
+                                <p class="my-4"><?php 
+                                $isi_berita = strip_tags($t['isi']); 
+                                $isi = substr($isi_berita,0,100); 
+                                $isi = substr($isi_berita,0,strrpos($isi," ")); 
+                                 echo"$isi";?> </p>
+                                <a href="berita-<?php echo"$t[id_sesi]";?>-<?php echo"$t[id_berita]";?>" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Read More</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="blog-item rounded">
-                            <div class="blog-img">
-                                <img src="tema/img/blog-2.jpg" class="img-fluid w-100" alt="Image">
-                            </div>
-                            <div class="blog-centent p-4">
-                                <div class="d-flex justify-content-between mb-4">
-                                    <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 01 Jan 2045</p>
-                                    <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> 3 Comments</a>
-                                </div>
-                                <a href="#" class="h4">Benefits of a weekly physiotherapy session</a>
-                                <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium hic consequatur beatae architecto,</p>
-                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="blog-item rounded">
-                            <div class="blog-img">
-                                <img src="tema/img/blog-3.jpg" class="img-fluid w-100" alt="Image">
-                            </div>
-                            <div class="blog-centent p-4">
-                                <div class="d-flex justify-content-between mb-4">
-                                    <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> 01 Jan 2045</p>
-                                    <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> 3 Comments</a>
-                                </div>
-                                <a href="#" class="h4">Regular excercise can slow ageing process</a>
-                                <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium hic consequatur beatae architecto,</p>
-                                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Read More</a>
-                            </div>
-                        </div>
+                    <?php } ?>
+                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="halaman-informasi" class="btn btn-primary rounded-pill text-white py-3 px-5">More Details</a>
                     </div>
                 </div>
             </div>
         </div>
+     
         <!-- Blog End -->
         <?php include "bawah.php"; ?>
         <!-- Back to Top -->

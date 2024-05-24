@@ -1,20 +1,20 @@
-
+<?php $current_url = $_SERVER['REQUEST_URI']; ?>
         <!-- Topbar Start -->
         <div class="container-fluid bg-dark px-5 d-none d-lg-block">
             <div class="row gx-0 align-items-center" style="height: 45px;">
                 <div class="col-lg-8 text-center text-lg-start mb-lg-0">
                     <div class="d-flex flex-wrap">
-                        <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
+                        <a href='https://maps.app.goo.gl/F8bcqyEfFqtzXWPt9' target='blank' class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
                         <a href="#" class="text-light me-4"><i class="fas fa-phone-alt text-primary me-2"></i><?php echo"$k_k[tahun]";?></a>
                         <a href="#" class="text-light me-0"><i class="fas fa-envelope text-primary me-2"></i><?php echo"$k_k[alias]";?></a>
                     </div>
                 </div>
                 <div class="col-lg-4 text-center text-lg-end">
                     <div class="d-flex align-items-center justify-content-end">
-                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/p/Rsu-Kartini-100064277072649/" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-0"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/rsu_kartini/" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@rsukartinikalirejolampung8211" class="btn btn-light btn-square border rounded-circle nav-fill me-0"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -35,20 +35,21 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.php" class="nav-item nav-link active">Beranda</a>
-                        <a href="about.php" class="nav-item nav-link">Tentang Kami</a>
-                        <a href="service.php" class="nav-item nav-link">Dokter Kami</a>
+                        <a href="index.php#tentang" class="nav-item nav-link">Tentang Kami</a>
+                        <a href="index.php#informasi" class="nav-item nav-link">Berita</a>
+                        <a href="index.php#dokter" class="nav-item nav-link">Dokter Kami</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Informasi</a>
                             <div class="dropdown-menu m-0">
-                                <a href="appointment.php" class="dropdown-item">Appointment</a>
-                                <a href="feature.php" class="dropdown-item">Features</a>
+                                <a href="halaman-galeri" class="dropdown-item">Galeri</a>
+                                <a href="halaman-informasi" class="dropdown-item">Berita</a>
                                 <a href="blog.php" class="dropdown-item">Our Blog</a>
                                 <a href="team.php" class="dropdown-item">Our Team</a>
                                 <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                                 <a href="404.php" class="dropdown-item">404 Page</a>
                             </div>
                         </div>
-                        <a href="contact.php" class="nav-item nav-link">Contact Us</a>
+                        <a href="halaman-hubungi" class="nav-item nav-link">Hubungi</a>
                     </div>
                     <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book Appointment</a>
                 </div>

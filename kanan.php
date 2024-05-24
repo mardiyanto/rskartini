@@ -34,7 +34,7 @@
             <div class='d-flex mb-3'>
                 <img class='img-fluid' src='foto/data/$x[gambar]' style='width: 80px; height: 80px; object-fit: cover;' alt=''>
                 <div class='d-flex flex-column justify-content-center ps-3'>
-                    <a href='utama.php?aksi=detailberita&id_berita=$x[id_berita]' class='h6 lh-base fw-medium mb-2'>$x[judul]</a>
+                    <a href='berita-$x[id_sesi]-$x[id_berita]' class='h6 lh-base fw-medium mb-2'>$x[judul]</a>
                     <small>
                         <span class='me-2'>By <a class='fst-italic text-muted' href='#'>Admin</a></span>
                         <span>In <a class='fst-italic text-muted' href='#'>$x[jenis]</a></span>

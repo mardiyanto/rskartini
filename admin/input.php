@@ -9,6 +9,7 @@
 $time=date ('h:i A');
 ///////////////////////////lihat/////////////////////////////////////////////
 if($_GET['aksi']=='inputartikel'){
+	$id_sesi = bin2hex(random_bytes(16)); 
 	if (empty($_POST['jd']) || empty($_POST['isi'])) {
 		echo "<script>
 				window.alert('Data yang Anda isikan belum lengkap');
@@ -17,7 +18,7 @@ if($_GET['aksi']=='inputartikel'){
 	} else {
 		$lokasi_file = $_FILES['gambar']['tmp_name'];
 		if (empty($lokasi_file)) {
-			mysqli_query($koneksi, "INSERT INTO berita (judul, tanggal, isi, jenis) VALUES ('$_POST[jd]', '$date', '$_POST[isi]', 'informasi')");
+			mysqli_query($koneksi, "INSERT INTO berita (id_sesi,judul, tanggal, isi, jenis) VALUES ('$id_sesi','$_POST[jd]', '$date', '$_POST[isi]', 'informasi')");
 	
 			echo "<script>
 					window.location=('index.php?aksi=informasi');
@@ -27,7 +28,7 @@ if($_GET['aksi']=='inputartikel'){
 			$file_name = $_FILES['gambar']['name'];
 			$target_file = "../foto/data/" . $tanggal . ".jpg";
 			if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target_file)) {
-				mysqli_query($koneksi, "INSERT INTO berita (judul, tanggal, isi, gambar, jenis) VALUES ('$_POST[jd]', '$date', '$_POST[isi]', '$tanggal.jpg', 'informasi')");
+				mysqli_query($koneksi, "INSERT INTO berita (id_sesi,judul, tanggal, isi, gambar, jenis) VALUES ('$id_sesi','$_POST[jd]', '$date', '$_POST[isi]', '$tanggal.jpg', 'informasi')");
 	
 				echo "<script>
 						window.location=('index.php?aksi=informasi');
@@ -42,6 +43,7 @@ if($_GET['aksi']=='inputartikel'){
 	}
 }
 elseif($_GET['aksi']=='inputhalaman'){
+	$id_sesi = bin2hex(random_bytes(16)); 
 	if (empty($_POST['jd']) || empty($_POST['isi'])) {
 		echo "<script>
 				window.alert('Data yang Anda isikan belum lengkap');
@@ -50,7 +52,7 @@ elseif($_GET['aksi']=='inputhalaman'){
 	} else {
 		$lokasi_file = $_FILES['gambar']['tmp_name'];
 		if (empty($lokasi_file)) {
-			mysqli_query($koneksi, "INSERT INTO berita (judul, tanggal, isi, jenis) VALUES ('$_POST[jd]', '$date', '$_POST[isi]', 'halaman')");
+			mysqli_query($koneksi, "INSERT INTO berita (id_sesi, judul, tanggal, isi, jenis) VALUES ('$id_sesi','$_POST[jd]', '$date', '$_POST[isi]', 'halaman')");
 	
 			echo "<script>
 					window.location=('index.php?aksi=halaman');
@@ -60,7 +62,7 @@ elseif($_GET['aksi']=='inputhalaman'){
 			$file_name = $_FILES['gambar']['name'];
 			$target_file = "../foto/data/" . $tanggal . ".jpg";
 			if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target_file)) {
-				mysqli_query($koneksi, "INSERT INTO berita (judul, tanggal, isi, gambar, jenis) VALUES ('$_POST[jd]', '$date', '$_POST[isi]', '$tanggal.jpg', 'halaman')");
+				mysqli_query($koneksi, "INSERT INTO berita (id_sesi,judul, tanggal, isi, gambar, jenis) VALUES ('$id_sesi','$_POST[jd]', '$date', '$_POST[isi]', '$tanggal.jpg', 'halaman')");
 	
 				echo "<script>
 						window.location=('index.php?aksi=halaman');
@@ -75,6 +77,7 @@ elseif($_GET['aksi']=='inputhalaman'){
 	}
 }
 elseif($_GET['aksi']=='inputpoli'){
+	$id_sesi = bin2hex(random_bytes(16)); 
 	if (empty($_POST['jd']) || empty($_POST['isi'])) {
 		echo "<script>
 				window.alert('Data yang Anda isikan belum lengkap');
@@ -83,7 +86,7 @@ elseif($_GET['aksi']=='inputpoli'){
 	} else {
 		$lokasi_file = $_FILES['gambar']['tmp_name'];
 		if (empty($lokasi_file)) {
-			mysqli_query($koneksi, "INSERT INTO berita (judul, tanggal, isi, jenis) VALUES ('$_POST[jd]', '$date', '$_POST[isi]', 'poli')");
+			mysqli_query($koneksi, "INSERT INTO berita (id_sesi,judul, tanggal, isi, jenis) VALUES ('$id_sesi','$_POST[jd]', '$date', '$_POST[isi]', 'poli')");
 	
 			echo "<script>
 					window.location=('index.php?aksi=poli');
@@ -93,7 +96,7 @@ elseif($_GET['aksi']=='inputpoli'){
 			$file_name = $_FILES['gambar']['name'];
 			$target_file = "../foto/data/" . $tanggal . ".jpg";
 			if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target_file)) {
-				mysqli_query($koneksi, "INSERT INTO berita (judul, tanggal, isi, gambar, jenis) VALUES ('$_POST[jd]', '$date', '$_POST[isi]', '$tanggal.jpg', 'poli')");
+				mysqli_query($koneksi, "INSERT INTO berita (id_sesi,judul, tanggal, isi, gambar, jenis) VALUES ('$id_sesi','$_POST[jd]', '$date', '$_POST[isi]', '$tanggal.jpg', 'poli')");
 	
 				echo "<script>
 						window.location=('index.php?aksi=poli');
