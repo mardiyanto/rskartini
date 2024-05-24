@@ -28,9 +28,7 @@ $aksi = isset($_GET['aksi']) ? $_GET['aksi'] : 'home';
       <li class="<?php echo $aksi == 'halaman' ? 'active' : ''; ?>">
         <a href='index.php?aksi=halaman'><i class='fa fa-arrows-h'></i>HALAMAN</a>
       </li>
-      <li class="<?php echo $aksi == 'profil' ? 'active' : ''; ?>">
-        <a href='index.php?aksi=profil'><i class='fa fa-arrows-h'></i>PROFIL</a>
-      </li>
+
       <li class="<?php echo $aksi == 'kritik' ? 'active' : ''; ?>">
         <a href='index.php?aksi=kritik'><i class='fa fa-arrows-h'></i>KRITIK</a>
       </li>
