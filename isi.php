@@ -111,37 +111,7 @@ echo"
 </div>
 ";
 }
-elseif($_GET['aksi']=='detailberitalama'){   
-    $tebaru=mysqli_query($koneksi," SELECT * FROM berita WHERE id_berita=$_GET[id_berita] ");
-$t=mysqli_fetch_array($tebaru);
-    echo"<!-- Page Header Start -->
-<div class='container-fluid bg-breadcrumb'>
-    <div class='container text-center py-5' style='max-width: 900px;'>
-        <h3 class='text-white display-3 mb-4 wow fadeInDown' data-wow-delay='0.1s'>Detail Informasi</h1>
-        <ol class='breadcrumb justify-content-center mb-0 wow fadeInDown' data-wow-delay='0.3s'>
-        <li class='breadcrumb-item'><a href='index.php'>Beranda</a></li>
-        <li class='breadcrumb-item'><a href='#'>Halaman</a></li>
-        <li class='breadcrumb-item active' aria-current='page'>informasi</li>
-        </ol>    
-    </div>
-</div>
-    
-    <!-- Page Header End -->
-    <div class='container-fluid py-5'>
-    <div class='container'>
-        <div class='row g-5'>
-            <div class='col-lg-8'>
-            <img class='img-fluid w-100 mb-5' src='foto/data/$t[gambar]' alt=''>
-            <h1 class='mb-4'>$t[judul]</h1>
-           $t[isi]
-            </div>";
-            include"kanan.php";        
-           
-      echo"  </div>
-    </div>
-    </div>
-    ";
-}
+
 elseif($_GET['aksi']=='detailberita'){  
 // Terima id_berita dan id_sesi dari URL
 $id_berita = isset($_GET['id_berita']) ? $_GET['id_berita'] : null;
@@ -177,8 +147,15 @@ if ($id_sesi !== null) {
     <div class='container-fluid py-5'>
     <div class='container'>
         <div class='row g-5'>
-            <div class='col-lg-8'>
-            <img class='img-fluid w-100 mb-5' src='foto/data/$t[gambar]' alt=''>
+            <div class='col-lg-8'>";
+            $gambarPath = "foto/data/$t[gambar]";
+
+// Periksa apakah gambar tersedia
+if (file_exists($gambarPath)) {
+    echo "<img class='img-fluid w-100 mb-5' src='$gambarPath' alt=''>";
+} else {
+    echo "";
+} echo"
             <h1 class='mb-4'>$t[judul]</h1>
            $t[isi]
             </div>";

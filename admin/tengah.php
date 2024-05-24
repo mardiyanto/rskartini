@@ -1058,7 +1058,7 @@ elseif($_GET['aksi']=='kritik'){
                                                 <td>$t[nama]</td>
                                                 <td>$t[email]</td>
                                 <td><button class='btn btn-info' data-toggle='modal' data-target='#uiModal$t[id_kritik]'><i class='fa fa-pencil'></i>lihat</button>
-                            <a href='hapus.php?aksi=hapuskritik&id_sub=$t[id_kritik]' onclick=\"return confirm ('Apakah yakin ingin menghapus $t[pesan] ?')\" title='Hapus'><i class='fa fa-remove'></i>hapus</a>
+                            <a href='hapus.php?aksi=hapuskritik&id_kritik=$t[id_kritik]' onclick=\"return confirm ('Apakah yakin ingin menghapus $t[pesan] ?')\" title='Hapus'><i class='fa fa-remove'></i>hapus</a>
                             </td>
                                             </tr>
                                             

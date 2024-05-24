@@ -35,18 +35,25 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.php" class="nav-item nav-link active">Beranda</a>
-                        <a href="index.php#tentang" class="nav-item nav-link">Tentang Kami</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profil Kami</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="index.php#tentang" class="dropdown-item">Tentang Kami</a>
+                                <?php   $tebaru=mysqli_query($koneksi," SELECT * FROM berita where jenis='halaman' ORDER BY id_berita DESC");
+                       while ($t=mysqli_fetch_array($tebaru)){	?>
+                                <a href="berita-<?php echo"$t[id_sesi]";?>-<?php echo"$t[id_berita]";?>" class="dropdown-item"><?php echo"$t[judul]";?></a>
+                                <?php } ?>
+                            </div>
+                        </div>
                         <a href="index.php#informasi" class="nav-item nav-link">Berita</a>
                         <a href="index.php#dokter" class="nav-item nav-link">Dokter Kami</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Informasi</a>
                             <div class="dropdown-menu m-0">
-                                <a href="halaman-galeri" class="dropdown-item">Galeri</a>
+                                <a href="#poli" class="dropdown-item">Poli Klinik</a>
+                                <a href="Jadwal.php" class="dropdown-item">Jadwal Dokter</a>
+                                <a href="kamar.php" class="dropdown-item">Informasi Kamar</a>
                                 <a href="halaman-informasi" class="dropdown-item">Berita</a>
-                                <a href="blog.php" class="dropdown-item">Our Blog</a>
-                                <a href="team.php" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-                                <a href="404.php" class="dropdown-item">404 Page</a>
                             </div>
                         </div>
                         <a href="halaman-hubungi" class="nav-item nav-link">Hubungi</a>

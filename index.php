@@ -486,10 +486,10 @@ include "koneksi.php";
                             </div>
                             <div class="blog-centent p-4">
                                 <div class="d-flex justify-content-between mb-4">
-                                    <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> <?php echo"$t[tgl]";?></p>
+                                    <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> <?php echo"$t[tanggal]";?></p>
                                     <a href="#" class="text-muted"><span class="fa fa-comments text-primary"></span> <?php echo"$t[dilihat]";?></a>
                                 </div>
-                                <a href="#" class="h4"><?php echo"$t[judul]";?></a>
+                                <a href="berita-<?php echo"$t[id_sesi]";?>-<?php echo"$t[id_berita]";?>" class="h4"><?php echo"$t[judul]";?></a>
                                 <p class="my-4"><?php 
                                 $isi_berita = strip_tags($t['isi']); 
                                 $isi = substr($isi_berita,0,100); 
