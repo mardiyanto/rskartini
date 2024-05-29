@@ -58,7 +58,7 @@ include "koneksi.php";
                             <h1 class="display-1 text-capitalize text-white mb-4"><?php echo"$t[judul]"; ?></h1>
                             <p class="mb-5 fs-5"><?php echo"$t[keterangan]"; ?>
                             </p>
-                            <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Book Appointment</a>
+                            <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="jadwal.php">Book Appointment</a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@ include "koneksi.php";
                     </div>
                     <?php } ?>
                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">Services More</a>
+                        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="jadwal.php">Services More</a>
                     </div>
                 </div>
             </div>

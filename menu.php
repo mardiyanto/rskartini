@@ -50,7 +50,7 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Informasi</a>
                             <div class="dropdown-menu m-0">
-                                <a href="#poli" class="dropdown-item">Poli Klinik</a>
+                                <a href="index.php#poli" class="dropdown-item">Poli Klinik</a>
                                 <a href="Jadwal.php" class="dropdown-item">Jadwal Dokter</a>
                                 <a href="kamar.php" class="dropdown-item">Informasi Kamar</a>
                                 <a href="halaman-informasi" class="dropdown-item">Berita</a>
@@ -58,6 +58,6 @@
                         </div>
                         <a href="halaman-hubungi" class="nav-item nav-link">Hubungi</a>
                     </div>
-                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book Appointment</a>
+                    <a href="jadwal.php" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book Appointment</a>
                 </div>
             </nav>
