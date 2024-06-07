@@ -156,7 +156,7 @@
                     <div class='btn-square bg-white rounded-circle mx-auto mb-4' style='width: 90px; height: 90px;'>
                         <i class='fa fa-map-marker-alt fa-2x text-primary'></i>
                     </div>
-                    <h4 class='mb-3'>Office Address</h4>
+                    <h4 class='mb-3'>alamat kami</h4>
                     <p class='mb-2'><?php echo "$k_k[alamat]"; ?></p>
                     <a class='btn btn-primary px-4' href='https://maps.app.goo.gl/F8bcqyEfFqtzXWPt9' target='blank'>Direction <i class='fa fa-arrow-right ms-2'></i></a>
                 </div>
