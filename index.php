@@ -9,6 +9,7 @@ include "koneksi.php";
     <head>
         <meta charset="utf-8">
         <title><?php echo"$k_k[nama_app]";?></title>
+        <link rel="icon" href="foto/logo.png" type="image/x-icon">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
