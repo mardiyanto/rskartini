@@ -20,29 +20,34 @@
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Quick Links</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> About Us</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Our Blog & News</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Our Team</a>
+                            <h4 class="mb-4 text-white">Menu Kami</h4>
+                            <a href="index.php"><i class="fas fa-angle-right me-2"></i> Tentang kami</a>
+                            <a href="halaman-hubungi"><i class="fas fa-angle-right me-2"></i> Hubungi kami</a>
+                            <a href="halaman-dokterkami"><i class="fas fa-angle-right me-2"></i> Dokter Kami</a>
+                            <a href="halaman-informasi"><i class="fas fa-angle-right me-2"></i> Blog & Berita</a>
+                            <a href="index.php#poli"><i class="fas fa-angle-right me-2"></i> Poli Klinik</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                            <h4 class="text-secondary mb-4">Jam Operasional</h4>
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-0">Poli Klinik</h6>
+                                <p class="text-white mb-0">Senin - Sabtu: 08.00 - 21.00</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-0">UGD/IGD:</h6>
+                                <p class="text-white mb-0">24 JAM</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-0">Poli Umum</h6>
+                                <p class="text-white mb-0">24 JAM</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Terapia Services</h4>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> All Services</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Physiotherapy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Diagnostics</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Manual Therapy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Massage Therapy</a>
-                            <a href=""><i class="fas fa-angle-right me-2"></i> Rehabilitation</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-white">Contact Info</h4>
+                            <h4 class="mb-4 text-white">Kontak Kami</h4>
                             <a href=""><i class="fa fa-map-marker-alt me-2"></i> <?php echo"$k_k[nama]";?></a>
                             <a href=""><i class="fas fa-envelope me-2"></i> <?php echo"$k_k[alias]";?></a>
 

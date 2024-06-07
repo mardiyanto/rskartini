@@ -26,7 +26,7 @@
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.php" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fa fa-clinic-medical me-2"></i><?php echo"$k_k[nama_app]";?></h1>
+                    <h1 class="text-primary m-0"><img src="foto/logo.png" alt="Logo" style="width: 60px;"> <?php echo"$k_k[nama_app]";?></h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -58,6 +58,6 @@
                         </div>
                         <a href="halaman-hubungi" class="nav-item nav-link">Hubungi</a>
                     </div>
-                    <a href="jadwal.php" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book Appointment</a>
+                    <a href="Jadwal.php" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Buat Janji</a>
                 </div>
             </nav>

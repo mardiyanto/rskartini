@@ -54,11 +54,11 @@ include "koneksi.php";
                     <img src="foto/galeri/<?php echo"$t[gambar]"; ?>" class="img-fluid w-100" alt="Image">
                     <div class="carousel-caption">
                         <div class="carousel-caption-content p-3">
-                            <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">SELAMTA DATANG DI WEBSITE RESMI <?php echo"$k_k[nama_app]";?></h5>
+                            <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">SELAMAT DATANG DI WEBSITE RESMI <?php echo"$k_k[nama_app]";?></h5>
                             <h1 class="display-1 text-capitalize text-white mb-4"><?php echo"$t[judul]"; ?></h1>
                             <p class="mb-5 fs-5"><?php echo"$t[keterangan]"; ?>
                             </p>
-                            <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="jadwal.php">Book Appointment</a>
+                            <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="Jadwal.php">Jadwal Dokter</a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@ include "koneksi.php";
                     </div>
                     <?php } ?>
                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="jadwal.php">Services More</a>
+                        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="Jadwal.php">Jadwal Dokter</a>
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@ include "koneksi.php";
                                 <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Duis aute irure dolor in reprehenderit in voluptate.</p>
                                 <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i> Velit esse cillum dolore eu fugiat nulla pariatur.</p>
                             </div> -->
-                            <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">Kujungi Kami</a>
+                            <a href="kamar.php" class="btn btn-primary rounded-pill text-white py-3 px-5">Kujungi Kami</a>
                         </div>
                     </div>
                 </div>
@@ -271,7 +271,7 @@ include "koneksi.php";
                         </div>
                     </div>
                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <a href="#" class="btn btn-primary rounded-pill text-white py-3 px-5">More Details</a>
+                        <a href="kamar.php" class="btn btn-primary rounded-pill text-white py-3 px-5">More Details</a>
                     </div>
                 </div>
             </div>
@@ -416,7 +416,7 @@ include "koneksi.php";
                  <? } ?>
                     
                  <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <a href="halaman-informasi" class="btn btn-primary rounded-pill text-white py-3 px-5">More Details</a>
+                        <a href="halaman-dokterkami" class="btn btn-primary rounded-pill text-white py-3 px-5">Dokter Kami</a>
                     </div> 
                     
                 </div>

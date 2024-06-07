@@ -2,7 +2,7 @@
 error_reporting(0); 
 $server = "localhost";
 $username = "root";
-$password = "";
+$password = "m4rd1best";
 $database = "db_rskartini";
 // Koneksi dan memilih database di server
 $koneksi = mysqli_connect($server,$username,$password) or die("Koneksi gagal");

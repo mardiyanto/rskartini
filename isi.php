@@ -183,7 +183,7 @@ elseif($_GET['aksi']=='hubungi'){
 echo"<!-- Page Header Start -->
 <div class='container-fluid bg-breadcrumb'>
     <div class='container text-center py-5' style='max-width: 900px;'>
-        <h3 class='text-white display-3 mb-4 wow fadeInDown' data-wow-delay='0.1s'>Konta Kami</h1>
+        <h3 class='text-white display-3 mb-4 wow fadeInDown' data-wow-delay='0.1s'>Kontak Kami</h1>
         <ol class='breadcrumb justify-content-center mb-0 wow fadeInDown' data-wow-delay='0.3s'>
         <li class='breadcrumb-item'><a href='index.php'>Beranda</a></li>
         <li class='breadcrumb-item'><a href='#'>Halaman</a></li>
@@ -220,7 +220,7 @@ echo"<!-- Page Header Start -->
                     <div class='btn-square bg-white rounded-circle mx-auto mb-4' style='width: 90px; height: 90px;'>
                         <i class='fa fa-map-marker-alt fa-2x text-primary'></i>
                     </div>
-                    <h4 class='mb-3'>Office Address</h4>
+                    <h4 class='mb-3'>Alamat Kantor</h4>
                     <p class='mb-2'>$k_k[alamat]</p>
                     <a class='btn btn-primary px-4' href='https://maps.app.goo.gl/F8bcqyEfFqtzXWPt9' target='blank'>Direction <i class='fa fa-arrow-right ms-2'></i></a>
                 </div>
@@ -246,7 +246,7 @@ echo"<!-- Page Header Start -->
                                 <i class='fa fa-phone-alt text-white'></i>
                             </div>
                             <div class='ms-3'>
-                                <h6>Call Us</h6>
+                                <h6>Hubungi Kami</h6>
                                 <span>$k_k[tahun]</span>
                             </div>
                         </div>
@@ -257,7 +257,7 @@ echo"<!-- Page Header Start -->
                                 <i class='fa fa-envelope text-white'></i>
                             </div>
                             <div class='ms-3'>
-                                <h6>Mail Us</h6>
+                                <h6>Email Kami</h6>
                                 <span>$k_k[alias]</span>
                             </div>
                         </div>
@@ -347,4 +347,58 @@ echo"<!-- Page Header Start -->
 ";
 
 }
+elseif($_GET['aksi']=='dokterkami'){
+    echo"<!-- Page Header Start -->
+    <div class='container-fluid bg-breadcrumb'>
+        <div class='container text-center py-5' style='max-width: 900px;'>
+            <h3 class='text-white display-3 mb-4 wow fadeInDown' data-wow-delay='0.1s'>Galeri</h1>
+            <ol class='breadcrumb justify-content-center mb-0 wow fadeInDown' data-wow-delay='0.3s'>
+            <li class='breadcrumb-item'><a href='index.php'>Beranda</a></li>
+            <li class='breadcrumb-item'><a href='#'>Halaman</a></li>
+            <li class='breadcrumb-item active' aria-current='page'>Galeri Kami</li>
+            </ol>    
+        </div>
+    </div>
+    <!-- Page Header End -->
+    <!-- Projects Start -->
+    <div class='container-fluid team py-5'>
+    <div class='container py-5'>
+        <div class='section-title mb-5 wow fadeInUp' data-wow-delay='0.1s'>
+            <div class='sub-style'>
+                <h4 class='sub-title px-3 mb-0'>Dokter Kami</h4>
+            </div>
+            <h1 class='display-3 mb-4'>Dokter Kami siap Membantu Anda</h1>
+          <p class='mb-0'>Kami Memberikan Pelayanan Terbaik, bukan paling baik</p> 
+        </div>
+        <div class='row g-4 justify-content-center'>";
+        $tebaru=mysqli_query($koneksi," SELECT * FROM pegawai ORDER BY id_pegawai DESC ");
+               while ($t=mysqli_fetch_array($tebaru)){	
+                echo" <div class='col-md-6 col-lg-6 col-xl-3 wow fadeInUp' data-wow-delay='0.1s'>
+                <div class='team-item rounded'>
+                    <div class='team-img rounded-top h-100'>
+                        <img src='foto/pegawai/$t[gambar]' class='img-fluid rounded-top w-100' alt=''>
+                        <div class='team-icon d-flex justify-content-center'>
+                            <a class='btn btn-square btn-primary text-white rounded-circle mx-1' href=''><i class='fab fa-facebook-f'></i></a>
+                            <a class='btn btn-square btn-primary text-white rounded-circle mx-1' href=''><i class='fab fa-twitter'></i></a>
+                            <a class='btn btn-square btn-primary text-white rounded-circle mx-1' href=''><i class='fab fa-instagram'></i></a>
+                            <a class='btn btn-square btn-primary text-white rounded-circle mx-1' href=''><i class='fab fa-youtube'></i></a>
+                        </div>
+                    </div>
+                    <div class='team-content text-center border border-primary border-top-0 rounded-bottom p-4'>
+                        <h5>$t[nama]</h5>
+                        <p class='mb-0'>$t[keterangan]</p>
+                    </div>
+                </div>
+            </div>
+            ";
+        }
+          echo"
+        </div>
+    </div>
+</div>
+        <!-- Projects End -->
+    ";
+    
+    }
 ?>
+
