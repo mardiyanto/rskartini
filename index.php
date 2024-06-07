@@ -395,46 +395,31 @@ include "koneksi.php";
                   <p class="mb-0">Kami Memberikan Pelayanan Terbaik, bukan paling baik</p> 
                 </div>
                 <div class="row g-4 justify-content-center">
-                    <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                        <?php   
-                        $tebaru=mysqli_query($koneksi,"SELECT * FROM pegawai ORDER BY RAND() LIMIT 4");
-                        $isActive = true;
-                        while ($t=mysqli_fetch_array($tebaru)){ ?>
-                            <div class="carousel-item <?php if($isActive) { echo 'active'; $isActive = false; } ?>">
-                                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                                    <div class="team-item rounded">
-                                        <div class="team-img rounded-top h-100">
-                                            <img src="foto/pegawai/<?php echo"$t[gambar]";?>" class="img-fluid rounded-top w-100" alt="">
-                                            <div class="team-icon d-flex justify-content-center">
-                                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                                <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-youtube"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
-                                            <h5><?php echo"$t[nama]";?></h5>
-                                            <p class="mb-0"><?php echo"$t[keterangan]";?></p>
-                                        </div>
-                                    </div>
+                <?php   $tebaru=mysqli_query($koneksi," SELECT * FROM pegawai ORDER BY RAND() LIMIT 4");
+                       while ($t=mysqli_fetch_array($tebaru)){	?>
+                   <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item rounded">
+                            <div class="team-img rounded-top h-100">
+                                <img src="foto/pegawai/<?php echo"$t[gambar]";?>" class="img-fluid rounded-top w-100" alt="">
+                                <div class="team-icon d-flex justify-content-center">
+                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href=""><i class="fab fa-youtube"></i></a>
                                 </div>
                             </div>
-                        <?php } ?>
+                            <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
+                                <h5><?php echo"$t[nama]";?></h5>
+                                <p class="mb-0"><?php echo"$t[keterangan]";?> </p>
+                            </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
+                 <? } ?>
                     
-                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                 <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
                         <a href="halaman-dokterkami" class="btn btn-primary rounded-pill text-white py-3 px-5">Dokter Kami</a>
                     </div> 
+                    
                 </div>
             </div>
         </div>
